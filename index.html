@@ -36,7 +36,7 @@
       <div class="collapse navbar-collapse" id="navMenu">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="#hero">หน้าแรก</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">เกี่ยวกับฉัน</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">ประสบการณ์</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">ทักษะ</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">ผลงาน</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">ติดต่อ</a></li>
@@ -826,6 +826,20 @@
       once: true, // แอนิเมชันทำงานครั้งเดียวตอนเลื่อนผ่าน
       offset: 100
     });
+    // สคริปต์สั่งให้เมนู Navbar พับเก็บอัตโนมัติเมื่อกดเลือกลิงก์ (สำหรับหน้าจอมือถือ)
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const navCollapse = document.getElementById('navMenu');
+    
+    if (navCollapse) {
+      const bsCollapse = new bootstrap.Collapse(navCollapse, { toggle: false });
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (navCollapse.classList.contains('show')) {
+            bsCollapse.hide();
+          }
+        });
+      });
+    }
     // สคริปต์เปลี่ยนรูปใน Modal ตามภาพที่คลิก
     const galleryModal = document.getElementById('galleryModal');
     if (galleryModal) {
