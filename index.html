@@ -46,25 +46,12 @@
   </nav>
 
   <!-- ================= Section 1: Hero Section ================= -->
-  <section id="hero" class="hero-studio-section">
-    <!-- ฉากหลังคลื่นลอนสีขาวปาดด้านล่างซ้าย -->
-    <div class="studio-wave-shape">
-      <svg viewBox="0 0 1440 700" preserveAspectRatio="none">
-        <path d="M 0,0 
-                 L 450,0 
-                 C 480,180 200,260 200,420 
-                 C 200,560 520,600 750,560 
-                 C 1050,510 1300,620 1440,700 
-                 L 0,700 Z" 
-              fill="#ffffff"></path>
-      </svg>
-    </div>
-
-    <div class="container position-relative hero-content-container">
-      <div class="row align-items-center min-vh-75">
+  <section id="hero" class="hero-section d-flex align-items-center">
+    <div class="container">
+      <div class="row align-items-center g-5">
         
         <!-- ฝั่งซ้าย: ข้อความแนะนำตัว -->
-        <div class="col-lg-6 hero-text-col" data-aos="fade-right" data-aos-duration="1000">
+        <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right" data-aos-duration="1000">
           <span class="badge bg-primary-subtle text-primary mb-3 px-3 py-2 rounded-pill fs-6">ยินดีต้อนรับสู่พอร์ตโฟลิโอ</span>
           <h1 class="display-5 fw-bold mb-3">
             สวัสดีครับ<br>
@@ -74,14 +61,14 @@
           <p class="lead text-muted mb-4">
             จากประสบการณ์การทำงาน ผมได้เห็นมิติการทำงานที่หลากหลายของภาคสหกรณ์ จึงตั้งใจนำโซลูชั่นในด้าน IT เข้ามาเพื่อช่วยแก้ไขปัญหาในการทำงาน ผมเชื่อมั่นเสมอว่า หากเลือกใช้เทคโนโลยีที่ 'ตอบโจทย์จริง' จะช่วยลดขั้นตอนการทำงานที่ซ้ำซ้อน เพิ่มความแม่นยำ และเป็นฟันเฟืองสำคัญที่นำพาองค์กรไปสู่ความยั่งยืนในยุคดิจิทัล
           </p>
-          <div>
+          <div class="d-flex gap-3">
             <a href="#projects" class="btn btn-primary btn-lg rounded-pill px-4 shadow-sm">ดาวน์โหลดเป็นไฟล์เอกสาร</a>
           </div>
         </div>
 
-        <!-- ฝั่งขวา: ภาพพอร์ตเทรตวางซ้อนบนฉากสี -->
-        <div class="col-lg-6 text-center hero-img-col" data-aos="fade-left" data-aos-duration="1000">
-          <img src="images/profile.png" alt="Profile" class="studio-person-img">
+        <!-- ฝั่งขวา: รูปภาพที่คุณทำมาใหม่ (ไม่มีกรอบ ไม่มีเงา) -->
+        <div class="col-lg-6 text-center order-1 order-lg-2" data-aos="fade-left" data-aos-duration="1000">
+          <img src="images/profile.png" alt="Natagorn Maneewan" class="hero-img img-fluid">
         </div>
 
       </div>

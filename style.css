@@ -136,70 +136,27 @@ body {
   border: 1px solid #e2e8f0;
 }
 
-/* คลุมพื้นที่ Hero ให้เป็นฉากหลังไล่เฉด น้ำเงิน-ม่วง */
-.hero-studio-section {
-  position: relative;
-  background: linear-gradient(135deg, #0d6efd 0%, #7000ff 100%);
-  overflow: hidden;
-  padding-top: 40px;
+/* Hero Section คลีนๆ พื้นหลังขาว */
+.hero-section {
+  background-color: #ffffff;
+  padding: 40px 0;
+  min-height: auto;
 }
 
-/* คลื่นสีขาวที่ปาดมาจากฝั่งซ้ายแบบในรูปตัวอย่าง */
-.studio-wave-shape {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.studio-wave-shape svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* คอนเทนต์ตัวหนังสือและรูปอยู่ชั้นบน */
-.hero-content-container {
-  z-index: 2;
-}
-
-.hero-text-col {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-/* ปรับภาพคนให้ใหญ่ขึ้น ขยายช่วงครึ่งตัว และถูกคลื่นขาวตัดผ่านด้านล่างเนียนตา */
-.hero-img-col {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.studio-person-img {
-  max-height: 560px;
+/* ควบคุมขนาดรูปภาพที่ทำมาใหม่ ให้พอดีและคมชัด */
+.hero-img {
+  max-height: 520px;
   width: auto;
   object-fit: contain;
-  /* ซูมโฟกัสให้สเกลใกล้เคียงตัวอย่าง */
-  transform: scale(1.1);
-  transform-origin: bottom center;
-  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.25));
+  border: none;
+  box-shadow: none;
+  filter: none; /* ไม่มีเงา */
 }
 
-/* จัดระยะเมื่อแสดงผลบนจอมือถือ */
+/* ย่อขนาดรูปบนหน้าจอมือถืออัตโนมัติ */
 @media (max-width: 991.98px) {
-  .hero-studio-section {
-    background: #ffffff; /* บนมือถือตัดทอนความซับซ้อน */
-  }
-  .studio-wave-shape {
-    display: none;
-  }
-  .studio-person-img {
-    max-height: 380px;
-    transform: none;
+  .hero-img {
+    max-height: 340px;
     margin-bottom: 20px;
   }
 }
