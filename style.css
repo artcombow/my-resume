@@ -136,7 +136,7 @@ body {
   border: 1px solid #e2e8f0;
 }
 
-* คลุมพื้นที่ Hero ให้เป็นฉากหลังไล่เฉด น้ำเงิน-ม่วง */
+/* คลุมพื้นที่ Hero ให้เป็นฉากหลังไล่เฉด น้ำเงิน-ม่วง */
 .hero-studio-section {
   position: relative;
   background: linear-gradient(135deg, #0d6efd 0%, #7000ff 100%);
