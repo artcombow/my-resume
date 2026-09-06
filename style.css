@@ -153,6 +153,47 @@ body {
   filter: none; /* ไม่มีเงา */
 }
 
+/* ================= Skills Section ================= */
+.skills-section {
+  background-color: #ffffff; /* พื้นหลังสีขาว สลับกับ Experience ที่เป็นสีเทาอ่อน */
+}
+
+.skill-card {
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* เอฟเฟกต์ยกการ์ดขึ้นเวลาชี้เมาส์ */
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(13, 110, 253, 0.1) !important;
+  border-color: #93c5fd;
+}
+
+/* กล่องคุมพื้นที่รูปภาพให้ไอคอนทุกอันขนาดสมดุลกัน */
+.skill-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-img {
+  transform: scale(1.1);
+}
+
 /* ย่อขนาดรูปบนหน้าจอมือถืออัตโนมัติ */
 @media (max-width: 991.98px) {
   .hero-img {
