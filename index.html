@@ -461,12 +461,151 @@
           </div>
         </div>
 
+        สำหรับแถบ งานประชาสัมพันธ์ เราจะทำเป็น Gallery / Album Grid ที่โชว์ภาพปกอย่างประณีต เมื่อคลิกที่รูปใดรูปหนึ่งจะมี Modal ภาพขนาดใหญ่ (Lightbox style) เด้งขึ้นมาดูรายละเอียดได้อย่างชัดเจนครับ
+
+เราจะใช้ Modal กลางเพียงตัวเดียว แล้วเขียน JavaScript สั้นๆ ให้เปลี่ยนรูปตามที่คลิก ทำให้โค้ดสะอาด ไม่หนักหน้าเว็บครับ
+
+1. แก้ไขใน index.html
+1.1 แทนที่เนื้อหาใน <!-- ================= TAB 2: งานประชาสัมพันธ์ ================= -->
+ค้นหา <div class="tab-pane fade" id="pr-pane" role="tabpanel"> แล้วแทนที่เนื้อหาข้างในด้วยโค้ดชุดนี้ครับ:
+
+HTML
         <!-- ================= TAB 2: งานประชาสัมพันธ์ ================= -->
         <div class="tab-pane fade" id="pr-pane" role="tabpanel">
-          <div class="p-5 text-center bg-white rounded-4 shadow-sm">
-            <i class="bi bi-clock-history text-muted fs-1 mb-2 d-block"></i>
-            <h5 class="fw-bold">กำลังรวบรวมผลงานประชาสัมพันธ์</h5>
-            <p class="text-muted mb-0">แบนเนอร์ อินโฟกราฟิก และสื่อสิ่งพิมพ์จะนำมาอัปเดตเร็วๆ นี้</p>
+          <div class="row g-4">
+
+            <!-- รูป 1 -->
+            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up">
+              <div class="gallery-item rounded-4 overflow-hidden shadow-sm bg-white" 
+                   data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                   data-img-src="https://baaccoop.com/coop_them5/file/slide_announce/20260901160028.png"
+                   data-img-title="สื่อประชาสัมพันธ์ 1">
+                <img src="https://baaccoop.com/coop_them5/file/slide_announce/20260901160028.png" alt="สื่อประชาสัมพันธ์ 1" class="gallery-thumb">
+                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
+              </div>
+            </div>
+
+            <!-- รูป 2 -->
+            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="50">
+              <div class="gallery-item rounded-4 overflow-hidden shadow-sm bg-white" 
+                   data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                   data-img-src="https://baaccoop.com/coop_them5/file/slide_announce/20260708150241.png"
+                   data-img-title="สื่อประชาสัมพันธ์ 2">
+                <img src="https://baaccoop.com/coop_them5/file/slide_announce/20260708150241.png" alt="สื่อประชาสัมพันธ์ 2" class="gallery-thumb">
+                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
+              </div>
+            </div>
+
+            <!-- รูป 3 -->
+            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+              <div class="gallery-item rounded-4 overflow-hidden shadow-sm bg-white" 
+                   data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                   data-img-src="https://baaccoop.com/coop_them5/file/slide_announce/20260605101011.png"
+                   data-img-title="สื่อประชาสัมพันธ์ 3">
+                <img src="https://baaccoop.com/coop_them5/file/slide_announce/20260605101011.png" alt="สื่อประชาสัมพันธ์ 3" class="gallery-thumb">
+                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
+              </div>
+            </div>
+
+            <!-- รูป 4 -->
+            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="150">
+              <div class="gallery-item rounded-4 overflow-hidden shadow-sm bg-white" 
+                   data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                   data-img-src="https://baaccoop.com/coop_them5/file/deposit/detail/20260702154252.png"
+                   data-img-title="สื่อประชาสัมพันธ์เงินฝาก 1">
+                <img src="https://baaccoop.com/coop_them5/file/deposit/detail/20260702154252.png" alt="สื่อประชาสัมพันธ์เงินฝาก 1" class="gallery-thumb">
+                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
+              </div>
+            </div>
+
+            <!-- รูป 5 -->
+            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up">
+              <div class="gallery-item rounded-4 overflow-hidden shadow-sm bg-white" 
+                   data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                   data-img-src="https://baaccoop.com/coop_them5/file/deposit/detail/20260702154424.png"
+                   data-img-title="สื่อประชาสัมพันธ์เงินฝาก 2">
+                <img src="https://baaccoop.com/coop_them5/file/deposit/detail/20260702154424.png" alt="สื่อประชาสัมพันธ์เงินฝาก 2" class="gallery-thumb">
+                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
+              </div>
+            </div>
+
+            <!-- รูป 6 -->
+            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="50">
+              <div class="gallery-item rounded-4 overflow-hidden shadow-sm bg-white" 
+                   data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                   data-img-src="https://baaccoop.com/coop_them5/file/deposit/detail/20260702154338.png"
+                   data-img-title="สื่อประชาสัมพันธ์เงินฝาก 3">
+                <img src="https://baaccoop.com/coop_them5/file/deposit/detail/20260702154338.png" alt="สื่อประชาสัมพันธ์เงินฝาก 3" class="gallery-thumb">
+                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
+              </div>
+            </div>
+
+            <!-- รูป 7 -->
+            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+              <div class="gallery-item rounded-4 overflow-hidden shadow-sm bg-white" 
+                   data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                   data-img-src="https://baaccoop.com/coop_them5/file/loan/detail/20260330165724.png"
+                   data-img-title="สื่อประชาสัมพันธ์เงินกู้ 1">
+                <img src="https://baaccoop.com/coop_them5/file/loan/detail/20260330165724.png" alt="สื่อประชาสัมพันธ์เงินกู้ 1" class="gallery-thumb">
+                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
+              </div>
+            </div>
+
+            <!-- รูป 8 -->
+            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="150">
+              <div class="gallery-item rounded-4 overflow-hidden shadow-sm bg-white" 
+                   data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                   data-img-src="https://baaccoop.com/coop_them5/file/loan/detail/20260515131604.png"
+                   data-img-title="สื่อประชาสัมพันธ์เงินกู้ 2">
+                <img src="https://baaccoop.com/coop_them5/file/loan/detail/20260515131604.png" alt="สื่อประชาสัมพันธ์เงินกู้ 2" class="gallery-thumb">
+                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
+              </div>
+            </div>
+
+            <!-- รูป 9 -->
+            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up">
+              <div class="gallery-item rounded-4 overflow-hidden shadow-sm bg-white" 
+                   data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                   data-img-src="https://baaccoop.com/coop_them5/file/loan/detail/20251104110138.png"
+                   data-img-title="สื่อประชาสัมพันธ์เงินกู้ 3">
+                <img src="https://baaccoop.com/coop_them5/file/loan/detail/20251104110138.png" alt="สื่อประชาสัมพันธ์เงินกู้ 3" class="gallery-thumb">
+                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
+              </div>
+            </div>
+
+            <!-- รูป 10 -->
+            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="50">
+              <div class="gallery-item rounded-4 overflow-hidden shadow-sm bg-white" 
+                   data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                   data-img-src="https://baaccoop.com/coop_them5/file/welfare_grants/detail/20240402090047.png"
+                   data-img-title="สื่อประชาสัมพันธ์สวัสดิการ 1">
+                <img src="https://baaccoop.com/coop_them5/file/welfare_grants/detail/20240402090047.png" alt="สื่อประชาสัมพันธ์สวัสดิการ 1" class="gallery-thumb">
+                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
+              </div>
+            </div>
+
+            <!-- รูป 11 -->
+            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+              <div class="gallery-item rounded-4 overflow-hidden shadow-sm bg-white" 
+                   data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                   data-img-src="https://baaccoop.com/coop_them5/file/welfare_grants/detail/20240402093437.png"
+                   data-img-title="สื่อประชาสัมพันธ์สวัสดิการ 2">
+                <img src="https://baaccoop.com/coop_them5/file/welfare_grants/detail/20240402093437.png" alt="สื่อประชาสัมพันธ์สวัสดิการ 2" class="gallery-thumb">
+                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
+              </div>
+            </div>
+
+            <!-- รูป 12 -->
+            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="150">
+              <div class="gallery-item rounded-4 overflow-hidden shadow-sm bg-white" 
+                   data-bs-toggle="modal" data-bs-target="#galleryModal" 
+                   data-img-src="https://baaccoop.com/coop_them5/file/welfare_grants/detail/20240402094642.png"
+                   data-img-title="สื่อประชาสัมพันธ์สวัสดิการ 3">
+                <img src="https://baaccoop.com/coop_them5/file/welfare_grants/detail/20240402094642.png" alt="สื่อประชาสัมพันธ์สวัสดิการ 3" class="gallery-thumb">
+                <div class="gallery-overlay"><i class="bi bi-arrows-fullscreen"></i></div>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -626,6 +765,21 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal สำหรับดูรูปภาพประชาสัมพันธ์ขนาดใหญ่ -->
+  <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content rounded-4 border-0 shadow bg-dark">
+        <div class="modal-header border-0 pb-0">
+          <h6 class="modal-title text-white fw-bold" id="galleryModalTitle">รูปภาพประชาสัมพันธ์</h6>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center p-3">
+          <img src="" id="galleryModalImg" class="img-fluid rounded-3 shadow" style="max-height: 80vh; object-fit: contain;">
+        </div>
+      </div>
+    </div>
+  </div>
   
 
   <!-- ================= Scripts ================= -->
@@ -640,6 +794,18 @@
       once: true, // แอนิเมชันทำงานครั้งเดียวตอนเลื่อนผ่าน
       offset: 100
     });
+    // สคริปต์เปลี่ยนรูปใน Modal ตามภาพที่คลิก
+    const galleryModal = document.getElementById('galleryModal');
+    if (galleryModal) {
+      galleryModal.addEventListener('show.bs.modal', function (event) {
+        const triggerItem = event.relatedTarget;
+        const imgSrc = triggerItem.getAttribute('data-img-src');
+        const imgTitle = triggerItem.getAttribute('data-img-title');
+        
+        document.getElementById('galleryModalImg').src = imgSrc;
+        document.getElementById('galleryModalTitle').textContent = imgTitle;
+      });
+    }
   </script>
 </body>
 </html>
