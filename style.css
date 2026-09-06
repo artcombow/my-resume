@@ -72,7 +72,7 @@ body {
 /* ตัวรูปภาพ: สูง 75% (3:4) ยืนซ้อนหน้ารอยแปรง */
 .hero-profile-img {
   position: relative;
-  height: 75%; /* สูง 3 ใน 4 ของ wrapper */
+  height: 100%; /* สูง 3 ใน 4 ของ wrapper */
   width: auto;
   object-fit: contain;
   z-index: 2;
