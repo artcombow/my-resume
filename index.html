@@ -955,6 +955,20 @@
         playerVideo.currentTime = 0;
       });
     }
+
+    // สคริปต์แสดงภาพใบ Cer ขนาดใหญ่ใน Modal
+    const certModal = document.getElementById('certModal');
+    if (certModal) {
+      certModal.addEventListener('show.bs.modal', function (event) {
+        const triggerItem = event.relatedTarget;
+        const certSrc = triggerItem.getAttribute('data-cert-src');
+        const certTitle = triggerItem.getAttribute('data-cert-title');
+        
+        document.getElementById('certModalImg').src = certSrc;
+        document.getElementById('certModalTitle').textContent = certTitle;
+      });
+    }
+    
   </script>
 </body>
 </html>
