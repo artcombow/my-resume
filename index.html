@@ -602,10 +602,30 @@
 
         <!-- ================= TAB 3: งานสื่อวิดีโอ ================= -->
         <div class="tab-pane fade" id="video-pane" role="tabpanel">
-          <div class="p-5 text-center bg-white rounded-4 shadow-sm">
-            <i class="bi bi-camera-reels text-muted fs-1 mb-2 d-block"></i>
-            <h5 class="fw-bold">กำลังรวบรวมผลงานสื่อวิดีโอ</h5>
-            <p class="text-muted mb-0">วิดีโอแนะนำการใช้งานระบบ และคลิปประชาสัมพันธ์จะนำมาอัปเดตเร็วๆ นี้</p>
+          <div class="row justify-content-center">
+            
+            <div class="col-md-8 col-lg-6" data-aos="fade-up">
+              <!-- การ์ดวิดีโอจำลองปกพร้อมปุ่มกดเล่น -->
+              <div class="video-card rounded-4 overflow-hidden shadow-sm bg-white border" data-bs-toggle="modal" data-bs-target="#videoModal">
+                <div class="video-thumb-wrapper">
+                  <!-- ภาพพื้นหลังตัวแทนวิดีโอ หรือจะใช้เป็นรูปปกวิดีโอก็ได้ -->
+                  <div class="video-placeholder-bg d-flex align-items-center justify-content-center">
+                    <div class="play-btn-circle">
+                      <i class="bi bi-play-fill"></i>
+                    </div>
+                  </div>
+                  <span class="badge bg-danger position-absolute top-0 end-0 m-3 rounded-pill px-3 py-2">
+                    <i class="bi bi-camera-reels-fill me-1"></i> วิดีโอผลงาน
+                  </span>
+                </div>
+                
+                <div class="p-4 text-center">
+                  <h5 class="fw-bold mb-2">วิดีโอแนะนำและนำเสนอผลงาน</h5>
+                  <p class="text-muted small mb-0">คลิกเพื่อรับชมสื่อวิดีโอการนำเสนอและสาธิตการใช้งานระบบ</p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -771,6 +791,27 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal สำหรับเล่นวิดีโอ -->
+  <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content rounded-4 border-0 shadow bg-black overflow-hidden">
+        <div class="modal-header border-0 pb-0">
+          <h6 class="modal-title text-white fw-bold">วิดีโอผลงาน</h6>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-2 p-md-3">
+          <div class="ratio ratio-16x9">
+            <!-- แท็กวิดีโอ HTML5 -->
+            <video id="playerVideo" controls playsinline class="rounded-3 w-100 h-100">
+              <source src="video/eivdo.mp4" type="video/mp4">
+              เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ HTML5
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   
 
   <!-- ================= Scripts ================= -->
@@ -795,6 +836,22 @@
         
         document.getElementById('galleryModalImg').src = imgSrc;
         document.getElementById('galleryModalTitle').textContent = imgTitle;
+      });
+    }
+    // สคริปต์ควบคุมการเล่น/หยุดวิดีโอใน Video Modal
+    const videoModal = document.getElementById('videoModal');
+    const playerVideo = document.getElementById('playerVideo');
+
+    if (videoModal && playerVideo) {
+      // เมื่อเปิด Modal ให้เริ่มเล่น
+      videoModal.addEventListener('shown.bs.modal', function () {
+        playerVideo.play();
+      });
+
+      // เมื่อปิด Modal ให้หยุดเล่นและรีเซ็ตเวลา
+      videoModal.addEventListener('hide.bs.modal', function () {
+        playerVideo.pause();
+        playerVideo.currentTime = 0;
       });
     }
   </script>
