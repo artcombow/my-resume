@@ -39,6 +39,7 @@
           <li class="nav-item"><a class="nav-link" href="#experience">ประสบการณ์</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">ทักษะ</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">ผลงาน</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">การอบรม</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">ติดต่อ</a></li>
         </ul>
       </div>
@@ -632,6 +633,92 @@
       </div>
     </div>
   </section>
+
+  <!-- ================= Section 5: Certifications & Training ================= -->
+  <section id="certifications" class="cert-section py-5">
+    <div class="container py-4">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <span class="badge bg-primary-subtle text-primary mb-2 px-3 py-2 rounded-pill fs-6">การพัฒนาตนเอง</span>
+        <h2 class="display-6 fw-bold">การอบรมและใบประกาศนียบัตร (Certifications)</h2>
+        <p class="text-muted">หลักสูตรฝึกอบรมเพื่อพัฒนาทักษะและเสริมสร้างความรู้ทางวิชาชีพ</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        
+        <!-- 1. การควบคุมภายในของสหกรณ์ด้านเทคโนโลยีสารสนเทศ -->
+        <div class="col-md-6 col-lg-5" data-aos="fade-up" data-aos-delay="100">
+          <div class="cert-card rounded-4 bg-white shadow-sm overflow-hidden h-100 border">
+            <div class="cert-thumb-box" data-bs-toggle="modal" data-bs-target="#certModal"
+                 data-cert-src="images/cerf1.png"
+                 data-cert-title="การควบคุมภายในของสหกรณ์ด้านเทคโนโลยีสารสนเทศ">
+              <img src="images/cerf1.png" alt="การควบคุมภายในของสหกรณ์ด้านเทคโนโลยีสารสนเทศ" class="cert-img">
+              <div class="cert-overlay">
+                <i class="bi bi-zoom-in fs-2 text-white"></i>
+              </div>
+            </div>
+            <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
+              <div>
+                <span class="badge bg-primary-subtle text-primary rounded-pill mb-2 px-3 py-1">IT Governance & Audit</span>
+                <h5 class="fw-bold mb-2">การควบคุมภายในของสหกรณ์ด้านเทคโนโลยีสารสนเทศ</h5>
+                <p class="text-muted small mb-0">เสริมสร้างมาตรฐานความปลอดภัย การกำกับดูแล และการบริหารความเสี่ยงด้าน IT ในองค์กรสหกรณ์</p>
+              </div>
+              <div class="pt-3 mt-3 border-top text-end">
+                <button class="btn btn-sm btn-outline-primary rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#certModal"
+                        data-cert-src="images/cerf1.png"
+                        data-cert-title="การควบคุมภายในของสหกรณ์ด้านเทคโนโลยีสารสนเทศ">
+                  ดูใบประกาศนียบัตร <i class="bi bi-arrows-fullscreen ms-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Getting Started with LINE MINI App -->
+        <div class="col-md-6 col-lg-5" data-aos="fade-up" data-aos-delay="200">
+          <div class="cert-card rounded-4 bg-white shadow-sm overflow-hidden h-100 border">
+            <div class="cert-thumb-box" data-bs-toggle="modal" data-bs-target="#certModal"
+                 data-cert-src="images/cerf2.png"
+                 data-cert-title="Getting Started with LINE MINI App">
+              <img src="images/cerf2.png" alt="Getting Started with LINE MINI App" class="cert-img">
+              <div class="cert-overlay">
+                <i class="bi bi-zoom-in fs-2 text-white"></i>
+              </div>
+            </div>
+            <div class="p-4 d-flex flex-column justify-content-between flex-grow-1">
+              <div>
+                <span class="badge bg-success-subtle text-success rounded-pill mb-2 px-3 py-1">LINE Developer</span>
+                <h5 class="fw-bold mb-2">Getting Started with LINE MINI App</h5>
+                <p class="text-muted small mb-0">การพัฒนาเว็บแอปพลิเคชันเพื่อทำงานร่วมกับแพลตฟอร์ม LINE สำหรับการบริการและการสื่อสารกับผู้ใช้งาน</p>
+              </div>
+              <div class="pt-3 mt-3 border-top text-end">
+                <button class="btn btn-sm btn-outline-primary rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#certModal"
+                        data-cert-src="images/cerf2.png"
+                        data-cert-title="Getting Started with LINE MINI App">
+                  ดูใบประกาศนียบัตร <i class="bi bi-arrows-fullscreen ms-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal สำหรับดูภาพใบ Cer ขนาดใหญ่ -->
+  <div class="modal fade" id="certModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content rounded-4 border-0 shadow bg-dark">
+        <div class="modal-header border-0 pb-0">
+          <h6 class="modal-title text-white fw-bold" id="certModalTitle">ใบประกาศนียบัตร</h6>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center p-3">
+          <img src="" id="certModalImg" class="img-fluid rounded-3 shadow" style="max-height: 80vh; object-fit: contain;">
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ================= Modals Popup สำหรับรายละเอียดผลงาน ================= -->
   
