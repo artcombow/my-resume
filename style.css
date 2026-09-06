@@ -95,4 +95,11 @@ body {
     transform: rotate(4deg) scale(1.02);
   }
 }
+/* ย่อขนาดบล็อกรูปภาพบนหน้าจอมือถือ */
+@media (max-width: 991.98px) {
+  .hero-image-wrapper {
+    height: 360px; /* ลดความสูงลงเล็กน้อยบนมือถือ */
+    max-width: 320px;
+  }
+}
 
