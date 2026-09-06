@@ -26,10 +26,18 @@ body {
   color: #0d6efd;
 }
 
-/* Hero Section */
+/* 1. ส่วน Hero ให้ใช้สีขาวสะอาด */
 .hero-section {
-  min-height: auto;       /* ยกเลิกการบังคับเต็มจอ 100vh */
-  padding: 40px 0 20px 0; /* ลดระยะขอบบนเป็น 40px และขอบล่างเป็น 20px */
+  background-color: #ffffff;
+  min-height: auto;
+  padding: 40px 0 30px 0;
+}
+
+/* 2. ส่วน Experience ใช้สีเทาอ่อน เพื่อให้การ์ดสีขาวตัดขึ้นมาอย่างสวยงาม */
+.experience-section {
+  background-color: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
 }
 
 /* คุมพื้นที่รูปภาพ */
