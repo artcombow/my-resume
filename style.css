@@ -40,32 +40,7 @@ body {
   border-bottom: 1px solid #f1f5f9;
 }
 
-/* คุมพื้นที่รูปภาพ */
-.hero-image-wrapper {
-  position: relative;
-  display: inline-flex;
-  justify-content: center;
-  align-items: flex-end;
-  width: 100%;
-  max-width: 440px;
-  height: 460px;          /* ปรับความสูงบล็อกให้พอดีกับภาพ */
-  margin: 0 auto;
-}
 
-/* รอยป้ายพู่กันไล่เฉดสี (Brush Stroke Effect) */
-.brush-stroke-bg {
-  position: absolute;
-  width: 90%;
-  height: 85%;
-  bottom: 5%;
-  background: linear-gradient(135deg, #0d6efd 15%, #7000ff 85%);
-  /* เทคนิคสร้างรูปทรงออร์แกนิกแบบรอยปาดพู่กัน */
-  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-  filter: blur(1px);
-  opacity: 0.9;
-  z-index: 1;
-  animation: morphBrush 8s ease-in-out infinite alternate;
-}
 
 /* รอยฟุ้งกระจายของสีน้ำเบื้องหลัง */
 .brush-stroke-bg::after {
@@ -161,22 +136,61 @@ body {
   border: 1px solid #e2e8f0;
 }
 
-/* แอนิเมชันให้ทรงพู่กันกระเพื่อมอย่างเป็นธรรมชาติ */
-@keyframes morphBrush {
-  0% {
-    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-    transform: rotate(-3deg) scale(0.98);
-  }
-  100% {
-    border-radius: 60% 40% 35% 65% / 50% 60% 40% 50%;
-    transform: rotate(4deg) scale(1.02);
+/* กล่องคุมพื้นที่รูปภาพและกรอบคลื่น */
+.hero-wave-box {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 420px;
+  height: 480px;
+  margin: 0 auto;
+}
+
+/* กรอบสีทรงโค้งตัดลอนคลื่น (Wave Cutout Frame) */
+.wave-backdrop {
+  position: absolute;
+  inset: 0;
+  border-radius: 28px; /* มุมโค้งมนของตัวการ์ด */
+  background: linear-gradient(145deg, #0d6efd 10%, #7000ff 90%);
+  /* ตัดเส้นคลื่นเว้าด้านล่างซ้ายตามแบบเป๊ะๆ */
+  clip-path: polygon(
+    0% 0%, 
+    100% 0%, 
+    100% 75%, 
+    70% 95%, 
+    45% 75%, 
+    20% 50%, 
+    0% 40%
+  );
+  /* ปรับให้ขอบคลื่นมีความโค้งมนนุ่มนวล */
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+/* สามารถใช้ SVG Path ตัดโค้งคลื่นแบบเนียน 100% (แนะนำ) */
+@supports (clip-path: path('M 0,0 L...')) {
+  .wave-backdrop {
+    clip-path: path("M 0 28 C 0 12 12 0 28 0 L 392 0 C 408 0 420 12 420 28 L 420 340 C 370 430 300 450 240 380 C 180 310 120 280 60 340 C 25 375 0 380 0 380 Z");
   }
 }
-/* ย่อขนาดบล็อกรูปภาพบนหน้าจอมือถือ */
+
+/* ตัวรูปภาพ: ให้ยืนทะลุ/ซ้อนขึ้นมาจากขอบคลื่น */
+.hero-profile-img {
+  position: relative;
+  height: 95%;
+  width: auto;
+  object-fit: contain;
+  z-index: 2;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.2));
+}
+
+/* ปรับขนาดให้พอดีบนหน้าจอมือถือ */
 @media (max-width: 991.98px) {
-  .hero-image-wrapper {
-    height: 360px; /* ลดความสูงลงเล็กน้อยบนมือถือ */
+  .hero-wave-box {
     max-width: 320px;
+    height: 380px;
   }
 }
 
