@@ -28,11 +28,11 @@ body {
 
 /* Hero Section */
 .hero-section {
-  min-height: calc(100vh - 70px);
-  padding: 60px 0;
+  min-height: auto;       /* ยกเลิกการบังคับเต็มจอ 100vh */
+  padding: 40px 0 20px 0; /* ลดระยะขอบบนเป็น 40px และขอบล่างเป็น 20px */
 }
 
-/* คอนเทนเนอร์คุมสัดส่วนพื้นที่รูป */
+/* คุมพื้นที่รูปภาพ */
 .hero-image-wrapper {
   position: relative;
   display: inline-flex;
@@ -40,7 +40,7 @@ body {
   align-items: flex-end;
   width: 100%;
   max-width: 440px;
-  height: 520px; /* ความสูงรวมของบล็อกส่วนบน */
+  height: 460px;          /* ปรับความสูงบล็อกให้พอดีกับภาพ */
   margin: 0 auto;
 }
 
@@ -69,10 +69,10 @@ body {
   z-index: -1;
 }
 
-/* ตัวรูปภาพ: สูง 75% (3:4) ยืนซ้อนหน้ารอยแปรง */
+/* ตัวรูปภาพตามที่คุณปรับแก้ (สูง 100% ของ wrapper) */
 .hero-profile-img {
   position: relative;
-  height: 100%; /* สูง 3 ใน 4 ของ wrapper */
+  height: 100%;
   width: auto;
   object-fit: contain;
   z-index: 2;
